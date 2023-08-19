@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container1">
+        <h2>Welcome Users</h2>
+        <p>Welcome to our healthcare platform. We're here to serve you.</p>
+        
+        <h3>Patient Registration</h3>
+        <p>If you're a new patient, please sign up to access our services.</p>
+        <a href="{% url 'signup' %}" class="nav-button">Signup</a></br>
+        
+        <h3>For Doctors</h3>
+        <p>If you're a healthcare professional, join us to provide your expertise.</p>
+        <a href="{% url 'signup' %}" class="nav-button">Visit</a></br>
+        
+        <h3>Already a User?</h3>
+        <p>Log in to your account to get started.</p>
+        <a href="{% url 'login' %}" class="nav-button">Login</a></br>
+    </div>
+{% endblock %}
+
+

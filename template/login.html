@@ -1,8 +1,4 @@
 {% extends "base.html" %}
-{% block head %}
-  <!--CSS-->
-  <link rel="stylesheet" href="/static/css/style.css">
-{% endblock %}
 
 {% block content %}
 {% if status %}
@@ -17,7 +13,7 @@
 </script>
 {% endif %}
   <div class="container">
-     <div class="custom-form">
+     <div class="custom-lform">
      <h1>Login</h1> 
      <form method="post">
         {% csrf_token %}

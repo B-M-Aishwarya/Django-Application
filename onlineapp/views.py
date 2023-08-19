@@ -5,6 +5,9 @@ from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate, logout
 
+def index(request):
+    return render(request, 'index.html')
+    
 def signup(request):
     context = {}
 

@@ -1,36 +1,18 @@
-{% extends 'base.html' %}
-<style>
-   #content-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .user-profile {
-    margin: 20px auto;
-    max-width: 400px;
-    text-align: center;
-  }
-  
-  .user-profile img {
-    max-width: 100px;
-    border-radius: 50%;
-  }
-</style>
+{% extends 'base.html' %} 
 
 {% block content %}
 <div id="content-container">
   <h2>Welcome to Your Dashboard, {{ user.username }}</h2>
-  <p>Name: {{ user.username }}</p>
-  
   <div class="user-profile">
+    <img src="/media/{{ user.profile_picture }}" alt="Image">
+
    <h3>User Profile Details:</h3>
-   <img src="{{ user.profile_picture }}" alt="img">
-   <p>Address: {{ user.address }}</p>
-   <p>City: {{ user.city }}</p>
-   <p>State: {{ user.state }}</p>
-   <p>Pincode: {{ user.pincode }}</p>
+   <p><span class="label">Name:</span> {{ user.username }}</p>
+   <p><span class="label">Email:</span> {{ user.email }}</p>
+   <p><span class="label">Address:</span> {{ user.address }}</p>
+   <p><span class="label">City:</span> {{ user.city }}</p>
+   <p><span class="label">State:</span> {{ user.state }}</p>
+   <p><span class="label">Pincode:</span> {{ user.pincode }}</p>
   </div>
 </div>
 {% endblock %}
