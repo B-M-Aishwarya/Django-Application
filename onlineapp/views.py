@@ -71,7 +71,6 @@ def login_user(request):
     return render(request, 'login.html', context)
 
 def dashboard(request):
-    context={}
-    user = UserProfile.objects.get(User, username=request.user.username)
-
+    user = UserProfile.objects.get(username=request.user.username)
+    context = {'user': user }
     return render(request, 'dashboard.html', context)
