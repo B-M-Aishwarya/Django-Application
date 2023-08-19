@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+   <link href="{% static 'css/style.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+{% if status %}
+<script>
+    alert('{{status}}');
+</script>
+{% endif %}
+
+{% if error %}
+<script>
+    alert('{{error}}');
+</script>
+{% endif %}
+  <div class="container">
+  <div class="custom-form">
+    <h1>User Registration</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="name" class="form-label">First Name</label>
+            <input type="text" id="name" name="name" class="form-input" required><br><br>
+        </div>
+        <div class="form-group">
+            <label for="lname" class="form-label">Last Name</label>
+            <input type="text" id="lname" name="lname" class="form-input" required><br><br>
+        </div>
+        <div class="form-group">
+            <label for="profile_picture" class="form-label">Profile Picture</label>
+            <input type="file" id="profile_picture" name="profile_picture" class="form-input"><br><br>
+        </div>
+        <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" name="email" class="form-input" required><br><br>
+        </div>
+        <div class="form-group">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" id="password" name="password" class="form-input" required><br><br>
+        </div>
+        <div class="form-group">
+            <label for="conf-pass" class="form-label">Confirm Password</label>
+            <input type="conf-pass" id="conf-pass" name="conf-pass" class="form-input" required><br><br>
+        </div>
+        <div class="form-group">
+            <label for="address" class="form-label">Address</label>
+            <textarea id="address" name="address" rows="3" class="form-input" required></textarea><br><br>
+        </div>
+        <div class="form-group">
+            <label for="city" class="form-label">City</label>
+            <input type="text" id="city" name="city" class="form-input" required><br><br>
+        </div>
+        <div class="form-group">
+            <label for="state" class="form-label">State</label>
+            <input type="text" id="state" name="state" class="form-input" required><br><br>
+        </div>
+        <div class="form-group">
+            <label for="pincode" class="form-label">Pincode</label>
+            <input type="text" id="pincode" name="pincode" class="form-input" required><br><br>
+        </div>
+        <div class="form-group form-button">
+            <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
+        </div>
+    </form>
+  </div>
+  </div>
+{% endblock %}
