@@ -39,6 +39,11 @@ def signup(request):
                     state=state,
                     pincode=pincode
                 )
+                if profile_picture:  
+                    user.profile_picture = profile_picture
+                    profile.save()
+                
+                context.update({'profile_pic': profile})
 
                 context['status'] = f"User {name} Registered Successfully!"
             else:
@@ -66,6 +71,7 @@ def login_user(request):
     return render(request, 'login.html', context)
 
 def dashboard(request):
-    user = UserProfile.objects.get(username=request.user.username)
-    context = {'user': user }
+    context={}
+    user = UserProfile.objects.get(User, username=request.user.username)
+
     return render(request, 'dashboard.html', context)
